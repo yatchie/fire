@@ -1,0 +1,5 @@
+# Default Page Change
+DirectoryIndex index.php
+#####wpcomment_nojpdeny#####
+SetEnvIf Request_URI ".*" WpCommentDeny
+#####end:wpcomment_nojpdeny#####

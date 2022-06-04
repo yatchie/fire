@@ -1,0 +1,247 @@
+/** 汎用スタイル **/
+
+body {
+  color: #666;
+  line-height: 1.6rem;
+}
+.ls {
+  letter-spacing: 0.2rem;
+}
+.bw-2 {
+  border-width: 2px !important;
+}
+.bw-3 {
+  border-width: 3px !important;
+}
+
+/** 見出し円 **/
+.circle {
+  width: 215px;
+  height: 215px;
+  text-align:center;
+  border-radius: 50%;
+  border: solid 3px #6c757d;
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+/** 既存スタイルの疑似上書き **/
+/** olカウンターを丸囲いに **/
+
+ol.num-list {
+  counter-reset: my-counter;
+  list-style: none;
+  padding: 0;
+} 
+.num-list li {
+  margin-bottom: 10px;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.2rem;  
+}
+.num-list li:before {
+content: counter(my-counter);
+counter-increment: my-counter;
+border: 2px solid #666;
+color: #666;
+float: left;
+text-align: center;
+height: 30px;
+width: 30px;
+border-radius: 50%;
+margin-right: 5px;
+margin-top: -2px;
+font-family: 'Big Shoulders Display', cursive;  
+}
+
+/** jumbotronの背景に指定画像 **/
+.jumbotron {
+  background: url('../img/top-background.jpg') center no-repeat;
+  background-size: cover;
+  height: 100%;
+min-height: 500px;
+}
+
+/** パンくずリストのセパレータ変更 **/
+li.breadcrumb-item.wf-breadcrumb-separator::before {
+  margin-left: 6px;
+  font-family: 'Font Awesome 5 Free';
+  content: '\f105';
+  font-weight: bold;
+}
+
+/** customized css **/
+/** size-{単位}: 正方サイズ指定 **/
+.wf-square-xs {
+  width: 20px;
+  height: 20px;
+}
+.wf-square-lg {
+  width: 260px;
+  height: 260px;
+}
+
+/** 傾けられた文字 **/
+.wf-slope-text {
+  transform: rotate(-4deg) translateY(-20px);
+}
+
+/** 正円＋テキスト **/
+.wf-circle {
+  transform: translateY(-50%);
+}
+.wf-circle > span {
+  position: absolute;
+  display: inline-block;
+  font-size: 1.3rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  text-align: center;
+}
+
+/** 下側のみが突き出した五角形 **/
+.wf-penta {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+}
+
+/** 声のテキスト **/
+.comment-box {
+  position: relative;
+  display: inline-block;
+  padding: 2rem;
+  font-size: 16px;
+  background: #f8f9fa;
+}
+
+/** 下側のみが突き出した吹き出し **/
+
+.down-balloon:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 20%;
+  margin-left: -2.5rem;
+  border: 5rem solid transparent;
+  border-top: 3rem solid #f8f9fa;
+  z-index: 999;
+}
+
+.down-balloon p {
+  margin: 0;
+  padding: 0;
+}
+
+/** 上側のみが突き出した吹き出し **/
+
+.up-balloon:before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  left: 20%;
+  margin-left: -2.5rem;
+  border: 5rem solid transparent;
+  border-bottom: 3rem solid #f8f9fa;
+  z-index: 999;
+}
+
+.up-balloon p {
+  margin: 0;
+  padding: 0;
+}
+
+/** 吹き出し **/
+.wf-balloon {
+  position: relative;
+  padding: 20px;
+  border: 2px solid rgba(75, 75, 75, 0.85);
+  border-radius: 12px;
+}
+
+.wf-balloon-left::before,
+.wf-balloon-left::after,
+.wf-balloon-right::before,
+.wf-balloon-right::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  top: 50px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.wf-balloon-left::before {
+  left: -15px;
+  border-right: 15px solid rgba(75, 75, 75, 0.85);
+}
+.wf-balloon-left::after {
+  left: -12px;
+  border-right: 15px solid white;
+}
+
+.wf-balloon-right::before {
+  right: -15px;
+  border-left: 15px solid rgba(75, 75, 75, 0.85);
+}
+.wf-balloon-right::after {
+  right: -12px;
+  border-left: 15px solid white;
+}
+
+/** トップへ戻るボタン **/
+.wf-gotta-top {
+  width: 100px;
+  height: 74px;
+  right: 0;
+  bottom: 0;
+  background: #4f4f4f;
+  opacity: 0.6;
+}
+
+/** ステップフロー **/
+
+.step-bar {
+  display: flex;
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0;
+}
+.step-bar li {
+  font-size: 12px;
+  list-style: none;
+  position: relative;
+  width: 33.333%;
+}
+.step-bar li:after {
+  background: #D0E1F9;
+  content: "";
+  width: calc(100% - 50px);
+  height: 5px;
+  position: absolute;
+  left: calc(-50% + 32px);
+  top: 50px;
+}
+.step-bar li:first-child:after {
+  display: none;
+}
+.step-bar li span {
+  background: #D0E1F9;
+  color: #ffffff;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 20px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 999;
+}
+.step-bar .visited:after {
+  background: #4D648D;
+}
+.step-bar .visited span {
+  background: #4D648D;
+}
