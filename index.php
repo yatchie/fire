@@ -137,14 +137,14 @@
 		<label for="name" class="col-md-3">住宅ローン</label>
 		<div class="col-md-4">
 		  <input type="number" name="principal" value="<? echo $principal;?>" class="form-control">
-		</div>万円
+		</div>円
 	      </div>
 
 	      <div class="row form-group">
 		<label for="name" class="col-md-3">金利</label>
 		<div class="col-md-4">
 		  <input type="number" name="interest" value="<? echo $interest;?>" class="form-control">
-		</div>%
+		</div>
 	      </div>
 
 	      <div class="row form-group">
